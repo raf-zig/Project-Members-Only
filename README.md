@@ -1,0 +1,2 @@
+This project was completed as part of [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-members-only) curriculum.
+A simple web app that allows visitors to see messages written on the site, but only allows members (people who have signed up) to see the authors of those messages, or to write messages themselves. Uses the Devise Gem for authentication.
