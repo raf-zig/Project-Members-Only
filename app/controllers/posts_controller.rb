@@ -10,11 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create 
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
+      flash[:success] = 'Post successfully created'
       redirect_to posts_path
-    else  
+    else 
+      flash.now[:error] = 'Something went wrong'
       render 'new'
     end
   end
@@ -22,6 +24,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:publication)
   end
 end

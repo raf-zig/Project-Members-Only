@@ -1,5 +1,14 @@
-<div>
-<% @posts.reverse_each do |post| %>
 
+
+
+<div>
+ 
+<% @posts.reverse_each do |post| %>
+    <div>
+        <% if user_signed_in?%>
+          <p><%= post.user.name %> said: </p>
+        <% end %>
+        <p><%= post.publication %></p>
+    </div>
 <% end %>
 </div>
